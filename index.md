@@ -95,10 +95,12 @@ As a result, we have a critical need for a DP0.2-sized (~300 square degrees) dat
 
 ## What a complete process would look like
 
-## raw notes
+##
+
+## Appendix: Technical-level recommendations
 
 
-we need to be previewing substantial bigger stuff
+<!-- we need to be previewing substantial bigger stuff
     bulk cutout
     forced photomerty
     how long do we keep visits in the cache
@@ -112,11 +114,6 @@ static obscore table in Qserv, many manual steps
 
 glue tooling is lacking
 
-##
-
-## Appendix: Technical-level recommendations
-
-
 
 - alpha version of the catalog schema really is needed (ucds, description)
 - Jim sat down with the object table and immediately found issues
@@ -126,4 +123,4 @@ glue tooling is lacking
     Nate still on FL
     HIPS production pipelines was rewritten and the data flow is different (way data was aggregated was different) as w
 
-
+ -->

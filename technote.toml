@@ -13,14 +13,15 @@ license.id = "CC-BY-4.0"
 state = "draft"
 
 [[technote.authors]]
-name.given = "Frossie"
-name.family = "Economou"
 internal_id = "economouf"
 orcid = "https://orcid.org/0000-0002-8333-7615"
+name = {given = "Frossie", family = "Economou"}
 [[technote.authors.affiliations]]
 name = "Vera C. Rubin Observatory Project Office"
 internal_id = "RubinObs"
 address = "Tucson"
+ror = "https://ror.org/048g3cy84"
+
 [[technote.authors]]
 name = {given = "Gregory P.", family = "Dubois-Felsmann"}
 internal_id = "duboisfelsmanngp"
@@ -28,4 +29,5 @@ orcid = "https://orcid.org/0000-0003-1598-6979"
 [[technote.authors.affiliations]]
 name = "California Institute of Technology"
 internal_id = "IPAC"
-ror = "None"
+ror = "https://ror.org/05q79g396"
+
