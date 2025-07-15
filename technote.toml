@@ -21,3 +21,11 @@ orcid = "https://orcid.org/0000-0002-8333-7615"
 name = "Vera C. Rubin Observatory Project Office"
 internal_id = "RubinObs"
 address = "Tucson"
+[[technote.authors]]
+name = {given = "Gregory P.", family = "Dubois-Felsmann"}
+internal_id = "duboisfelsmanngp"
+orcid = "https://orcid.org/0000-0003-1598-6979"
+[[technote.authors.affiliations]]
+name = "California Institute of Technology"
+internal_id = "IPAC"
+ror = "None"
