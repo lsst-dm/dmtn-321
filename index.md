@@ -71,6 +71,20 @@ The cracks in DP1 were less due to the bucket-brigade model itself and more to t
 
 **Recommendation:** Future data release schedules include explicit deadlines for each of those steps, with steps 1-3 being parallelized to the extent possible.
 
+### Gated approval from a person/body with sign-off powers
+
+While the peer-to-peer bucket-brigade model is well suited for technical handover, there were a number of times where the Data Services Lead, specifically, had to make decisions that were not properly in her purview.
+An example of this was which HiPS product to use for the coverage map, which field to center the coverage map to, etc.
+
+Additionally, it was unclear who could be negotiated with for discussions along the lines of "do you want to go live like this, or do you want us to slip and fix this first".
+The RSP product owners provided great input and context, however they did not have the authority to slip a community-promised date either.
+Lines of command are further blurred by the fact that a data release crosses the boundaries of Data Management and System Performance.
+
+**Recommendation:** A "decider of last resort" with the expertise and organisational standing to make quick authoritative decisions on appeal by the Data Services Lead should be designated.
+
+Note that while in operations there is a plan for a Data Release board, it is still necessary to have a person (perhaps the same person would would chair this board) that can make timely decisions without a formal process.
+
+
 ### Poorly anticipated user behavior
 
 Here are some sobering statistics on the comparison between DR1 and (estimated) DP1
@@ -87,10 +101,13 @@ Here are some sobering statistics on the comparison between DR1 and (estimated) 
 One of the key observations that has arisen _since_ the launch of DP1 is that the DP0.2 userbase (and our internal scale testing campaign that drew for it) were a very poor predictor of actual user behavior with real data (for example types, rates and complexity of searches).
 
 Even within the Data Management teams who were already certain DP0.2 had instilled a false sense of confidence in a number of areas, it was an unpleasant surprise how little DP0.2 had prepared us for DP1.
+As an example, real-world users uncovered more issues than scale testing with 10x more users.
+Real users do wrong things, things you didn't expect, and generally don't behave like unit tests - which software teams are well aware of, but with the level of flexibility provided by the RSP, user-introduced entropy escalates much faster.
+There's a massive difference between "what if the user presses the wrong button" and "what if the user writes bad code", as there are only so many buttons but an infinite ways to  get code wrong.
 
-As a result, we have a critical need for a DP0.2-sized (~300 square degrees) data preview with LSSTCam data as an intermediate step before jumping to full DR1 size.
+As a result, we have a critical need for a DP0.2-sized (minimum ~300 square degrees) data preview with real users working on LSSTCam data as an intermediate step before jumping to full DR1 size.
 
-**Recommendation:** A substantial DP2 release is needed to give us user behavior data on a genuine DR1 precursor while we still have the protection of the "preview" label so that we can explain to the community we are still learning.
+**Recommendation:** A substantial DP2 release is needed to give us user behavior data on a genuine DR1 precursor while we still have the protection of the "preview" label so that we can explain to the community we are still learning. It should not be ruled out that an addition "preview" release will be required before we can stand behind something with the DR1 label.
 
 
 ## What a complete process would look like
