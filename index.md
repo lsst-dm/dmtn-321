@@ -27,7 +27,7 @@ Complacency on the basis of DP1's apparent success is dangerous and we ignore it
 
 The key project-level recommendations in this document are:
 
-1. DP2 is a key rehearsal release. We are best served by a DP2 that is in-between between DP1 and DR1 in size and complexity so that we can iterate on the data-release process and tooling improvements set out in detail in this document before tackling full scale. We also need a larger release still under the "Preview" shield before going to the DR label.
+1. DP2 is a key rehearsal release. We are best served by a DP2 that is in-between between DP1 and DR1 in size and complexity so that we can iterate on the data-release process and tooling improvements set out in detail in this document before tackling full scale. We also need a larger release still under the "Preview" caveat before going to the DR label.
 2. Adequate time is taken between DP2 and DR1 to ensure the data release process is as turn-key as possible and allow us to get on a sound footing of sustainable annual data release schedules. While community enthusiasm for DR1 is obviously sky-high, failure to adequately prepare for DR1 risks creating a snowball effect that puts all subsequent releases at risk. Data Services is thus strongly in favor of the proposed plan for an end-of-year-1 DR1 (as opposed to a 6-month DR1)
 3. No later than the month following DP2, the RSP hybrid model should be technically reviewed to determine whether it is sound in its present form and if not, any related risks should be exercised so that mitigations can be in place in time for DR1. This item also reinforces (1) and (2).
 4. In the context of the scope of this document, the Prompt Products release is entirely un-rehearsed and requires significant attention from Data Management to get right. Given the obvious high interest in the community for timely transient science, this release should be given equivalent priority (if not higher) than DP2. This item also reinforces (2).
@@ -66,10 +66,11 @@ In the data previews so far this has been done "bucket-brigade" style with teams
 
 The bucket-brigade model is defensible, as the people in the observatory of the caliber and technical expertise to serve as a Czar are already over-subscribed, and many of these transfers require deep domain knowledge of the two systems involved.
 The cracks in DP1 were less due to the bucket-brigade model itself and more to the ad-hoc definition of who was passing the bucket when, to whom, what was in the bucket anyway, and whose role it was to check that.
+This was compounded by the Data Services Lead failing to understand until late in the game that she needed to be exerting oversight of the entire data release "pipeline".
 
 **Recommendation:**  A "shipping list" is drawn for each of the above six transfer points. The team passing the bucket has the responsibility to check that all the items in the shipment can be checked of.
 
-**Recommendation:** Future data release schedules include explicit deadlines for each of those steps, with steps 1-3 being parallelized to the extent possible.
+**Recommendation:** Future data release schedules include explicit deadlines for each of those steps, with steps 1-3 being parallelized to the extent possible. Missing these early deadlines should trigger a corresponding schedule delay.
 
 ### Gated approval from a person/body with sign-off powers
 
@@ -83,6 +84,37 @@ Lines of command are further blurred by the fact that a data release crosses the
 **Recommendation:** A "decider of last resort" with the expertise and organisational standing to make quick authoritative decisions on appeal by the Data Services Lead should be designated.
 
 Note that while in operations there is a plan for a Data Release board, it is still necessary to have a person (perhaps the same person would would chair this board) that can make timely decisions without a formal process.
+
+### Insufficient internal red-team testing
+
+One of the reasons that it was unclear how close to the deadline we were going to cut it until it was almost too late was the very late involvement of "critical" testers.
+Organisationally there are two groups that can provide pre-release testing, however the V&V team focuses on pre-handover pipeline product testing, and the CST team focus on "best practice" testing for their educational materials.
+
+The majority of late (2-3 week pre-release) serious issues was uncovered by testers with high levels of data and software domain expertise -- Product Owners, Pipeline Developers, Middleware Developers.
+These had a priori knowledge of what the answer _should_ be, so they were excellent
+Many of these were testing to be helpful off their own bat (and we appreciate them).
+However, this activity requires more effort that can be applied on a volunteer basis or an ad-hoc timeline.
+
+**Recommendation:** An organized red-team testing campaign should form part of the release schedule with testers with strong a priori knowledge of desired system behavior (and even some knowledge of where the bodies are burried).
+
+Even one day of testing under such conditions, with a process for ticketing feedback, would be immensely valuable.
+
+### Absence of a cumulative corpus for automated testing
+
+### Pre-mature external announcement of Data Release dates
+
+Nobody wants to have to walk back a publicly announced release date, which is why it is important to hold back an announcement until all the risk has burned down.
+
+This isn't just for the opportunity to burn down technical risk through an appropriate testing period, but also to allow for operational overrides or problems.
+
+For DP1, we announced a release date on May 30th. At that time we had burned down the major technical risk (addressed by the TAP-Qserv bridge) but the bulk of testing was still ahead of us.
+The lack of flexibility meant that we were not able to respond to the SLAC electrical work that took USDF off the air.
+The unplanned (but not unpredictable) problems with the subsequent cold start inconvenienced our users and embarrassed  our technical staff.
+While we discussed walking back the announced date until after the downtime, most of us did not feel comfortable advocating for this, especially given the high profile First Look exercise.
+
+**Recommendation:** Particularly so for Data Previews, but ideally for Data Releases as well, public announcement of a date should only be made after testing, with run-up announcements of "Summer 2025" level of accuracy until the release is all-cleared.
+
+Data Services does not have an opinion on whether it's better to have a very short (1-2 week) pre-announcement once the release is cleared or to hold the release for a longer pre-announcement period.
 
 
 ### Poorly anticipated user behavior
@@ -109,6 +141,36 @@ As a result, we have a critical need for a DP0.2-sized (minimum ~300 square degr
 
 **Recommendation:** A substantial DP2 release is needed to give us user behavior data on a genuine DR1 precursor while we still have the protection of the "preview" label so that we can explain to the community we are still learning. It should not be ruled out that an addition "preview" release will be required before we can stand behind something with the DR1 label.
 
+### Potential hybrid insufficiency
+
+Shortly after DP1 release, DP0.2 data was unavailable to data.lsst.cloud users (due to an S3DF compounded outage) for 9 days (DP1 catalogs were unavailable 16 hours longer than plannedq). In this light, the decision by Data Services to host DP1 images on Google Cloud may seem a fortuitous avoidance of a black swan event.
+
+What should not be lost is the reason for the decision to place DP1 next to the services in the first place.
+In the run-up to DP1, we found total end-to-end performance from the object store at S3DF to GGP was surprisingly poor, as well as highly variable.
+Additionally we had dropouts to communications to the Qserv REST API.
+Because of the DP1 schedule we did not have time to properly investigate these, and concerned that slow performance would seem unreasonable (and worrying) to users for such a small volume release, Data Services decided to host the DP1 images on Google Cloud.
+While this worked out reputationally, it means that the key operational model for a hybrid RSP (services on Google, data on SLAC) has not been proved by DP1, and remains a significant risk.
+
+Moreover, any trade-off is a two-edged sword; data at USDF means more network transfers, but putting more services at USDF so that can be next to the data (eg computational services) means fewer network transfers but more exposure to S3DF reliability.
+
+One advantage real-world DP1 usage gives us is a realistic user profile. We can use that to make decisions about whether to mitigate "pure hybrid" by having the most popular data products for the latest Data Release on GCP.
+
+**Recommendation:** No later than following DP0.2 release (but ideally earlier) prepare for a critical internal review of the pure hybrid plan.
+
+Data Services teams will start collecting data, conduct performance tests and calculate uptime statistics to support such a review.
+
+### Idiosyncratic issues
+
+The following issues arose due to issues that there is no reason to believe will arise in the future.
+
+#### Data Engineering understaffing
+
+Data Engineering has one full time developer FTE that has been diverted to address contingencies associated with the Prompt Products database.
+The Data Engineering lead is 50% FTE with another project at a time where the other project was also preparing a Data Release.
+
+As a result, data engineering effort was under-resourced compared to its planned and necessary effort level.
+
+
 
 ## What a complete process would look like
 
@@ -116,6 +178,19 @@ As a result, we have a critical need for a DP0.2-sized (minimum ~300 square degr
 
 ## Appendix: Technical-level recommendations
 
+The body of this document focuses on management shortfalls and organisational issues across departments.
+
+This appendix contains recommendations that can be addressed entirely within Data Management.
+
+### Disconnect between Qserv and Data Engineering
+
+Felis, a Data Engineering product, controls schema and constitutes source of truth for Data Services.
+It is not, however, source of truth for Qserv.
+
+The Data Services Lead is taking an action to discuss with these teams improvements, ideally to have Felis be source of truth for Qserv, or as a temporary mitigation, cross-validate the Felis and Qserv schemas.
+
+
+There is currenty
 
 <!-- we need to be previewing substantial bigger stuff
     bulk cutout
