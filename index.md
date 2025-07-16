@@ -27,7 +27,7 @@ Complacency on the basis of DP1's apparent success is dangerous and we ignore it
 
 The key project-level recommendations in this document are:
 
-1. DP2 is a key rehearsal release. We are best served by a DP2 that is in-between between DP1 and DR1 in size and complexity so that we can iterate on the data-release process and tooling improvements set out in detail in this document before tackling full scale. We also need a larger release still under the "Preview" caveat before going to the DR label.
+1.  DP1, as the first release containing real data and enabling astronomical discoveries, has already in a matter of days given us roadmap-altering insights into user query patterns that never emerged from DP0.2. It is essential to have at least one further release under the "Preview" (shared-risk) banner with science-driven user query patterns at a larger scale (minimum 300 sq deg), in order to have confidence we have properly rehearsed DR1 and have iterated on the data-release process and tooling improvements set out in detail in this document.
 2. Adequate time is taken between DP2 and DR1 to ensure the data release process is as turn-key as possible and allow us to get on a sound footing of sustainable annual data release schedules. While community enthusiasm for DR1 is obviously sky-high, failure to adequately prepare for DR1 risks creating a snowball effect that puts all subsequent releases at risk. Data Services is thus strongly in favor of the proposed plan for an end-of-year-1 DR1 (as opposed to a 6-month DR1)
 3. No later than the month following DP2, the RSP hybrid model should be technically reviewed to determine whether it is sound in its present form and if not, any related risks should be exercised so that mitigations can be in place in time for DR1. This item also reinforces (1) and (2).
 4. In the context of the scope of this document, the Prompt Products release is entirely un-rehearsed and requires significant attention from Data Management to get right. Given the obvious high interest in the community for timely transient science, this release should be given equivalent priority (if not higher) than DP2. This item also reinforces (2).
@@ -121,7 +121,7 @@ This isn't just for the opportunity to burn down technical risk through an appro
 
 For DP1, we announced a release date on May 30th. At that time we had burned down the major technical risk (addressed by the TAP-Qserv bridge) but the bulk of testing was still ahead of us.
 The lack of flexibility meant that we were not able to respond to the SLAC electrical work that took USDF off the air.
-The unplanned (but not unpredictable) problems with the subsequent cold start inconvenienced our users and embarrassed  our technical staff.
+The unplanned (but not unpredictable) problems with the subsequent cold start inconvenienced our users and embarrassed our technical staff.
 While we discussed walking back the announced date until after the downtime, most of us did not feel comfortable advocating for this, especially given the high profile First Look exercise.
 
 **Recommendation:** Particularly so for Data Previews, but ideally for Data Releases as well, public announcement of a date should only be made after testing, with run-up announcements of "Summer 2025" level of accuracy until the release is all-cleared.
