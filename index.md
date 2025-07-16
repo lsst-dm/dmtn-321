@@ -66,11 +66,13 @@ In the data previews so far this has been done "bucket-brigade" style with teams
 
 The bucket-brigade model is defensible, as the people in the observatory of the caliber and technical expertise to serve as a Czar are already over-subscribed, and many of these transfers require deep domain knowledge of the two systems involved.
 The cracks in DP1 were less due to the bucket-brigade model itself and more to the ad-hoc definition of who was passing the bucket when, to whom, what was in the bucket anyway, and whose role it was to check that.
-This was compounded by the Data Services Lead failing to understand until late in the game that she needed to be exerting oversight of the entire data release "pipeline".
+This was compounded by the Data Services Lead failing to understand until late in the game that she needed to be exerting oversight of the entire data release "pipeline", rather that "just" leading RSP service development and data publication.
 
-**Recommendation:**  A "shipping list" is drawn for each of the above six transfer points. The team passing the bucket has the responsibility to check that all the items in the shipment can be checked of.
+**Recommendation:**  A "shipping list" is drawn for each of the above six transfer points. The team passing the bucket has the responsibility to check that all the items in the shipment can be checked off. These shipping lists should be templated in some way (Github, JIRA) to be re-used for subsequent releases.
 
 **Recommendation:** Future data release schedules include explicit deadlines for each of those steps, with steps 1-3 being parallelized to the extent possible. Missing these early deadlines should trigger a corresponding schedule delay.
+
+**Recommendation:** A person who is _not_ the Data Services Lead, ideally from Pipelines or V&V should exercise oversight on steps 1-3 above and hand over to the Data Services Lead for steps 4-6.
 
 ### Gated approval from a person/body with sign-off powers
 
@@ -95,11 +97,21 @@ These had a priori knowledge of what the answer _should_ be, so they were excell
 Many of these were testing to be helpful off their own bat (and we appreciate them).
 However, this activity requires more effort that can be applied on a volunteer basis or an ad-hoc timeline.
 
-**Recommendation:** An organized red-team testing campaign should form part of the release schedule with testers with strong a priori knowledge of desired system behavior (and even some knowledge of where the bodies are burried).
+**Recommendation:** An organized red-team testing campaign should form part of the release schedule with testers with strong a priori knowledge of desired system behavior (and even some knowledge of where the bodies are buried).
 
 Even one day of testing under such conditions, with a process for ticketing feedback, would be immensely valuable.
 
 ### Absence of a cumulative corpus for automated testing
+
+From a technical point of view, it's oddly reassuring that our systems are mature enough for unscripted hand-offs.
+The downside of this is that the lack of process means that it's harder to set up automated testing against delivered data products.
+An example of this was the now infamous "where are the HiPS files" moment where it transpired it was unclear where the HiPS files were, where they should go, what the HiPS file delivery consisted of, whether it was a complete set etc.
+At moments there was deja-vu with issues seen during DP0.2.
+
+**Recommendation:** Adding to the recommendations on the "shipping list" checkpoint, at each checkpoint there should be a standardized representation of the data against which data checks can run. These tests would perform completeness checks, linting, and tests that check for errors previously seen to guard against regression.
+
+The tests should be a collaboration of the two teams involved at each hand-off. Mobu, configured with a data curation flock, is a reasonable platform for easy test development, but other mechanisms (such as CI) is also acceptable.
+The focus is on developing re-usable tests that can be run on future, including pilot, releases.
 
 ### Pre-mature external announcement of Data Release dates
 
@@ -159,9 +171,26 @@ One advantage real-world DP1 usage gives us is a realistic user profile. We can 
 
 Data Services teams will start collecting data, conduct performance tests and calculate uptime statistics to support such a review.
 
+### User sign-ups
+
+The process for granting RSP accounts has the dubious merit of being simultaneously labor intensive, and insufficiently rigorous (and confusing to users but that is a more technical matter).
+
+Ironically, the requirement for manual intervention for user creation was an asset for DP1 - 2,000 extra users you weren't expecting can't suddenly show up because it takes several days to process account creation requests.
+However, even this process cannot stop account requests in bad faith.
+
+**Recommendation:** We evaluate and a price third-party identity verification service.
+
 ### Idiosyncratic issues
 
 The following issues arose due to issues that there is no reason to believe will arise in the future.
+
+#### First Look
+
+First Look was an event that required significant effort from pipelines at just the time where pipeline developer capacity would have been available for testing, sanity checking, data product iteration, etc.
+
+#### Manic Miners
+
+An abuse event where accounts created in bad faith were mining cryptocurrency distracted SQuaRE for a brief period while we audited the activity to ensure no systems were compromised, swept for perpetrators and de-activated and reported the relevant accounts
 
 #### Data Engineering understaffing
 
@@ -170,27 +199,24 @@ The Data Engineering lead is 50% FTE with another project at a time where the ot
 
 As a result, data engineering effort was under-resourced compared to its planned and necessary effort level.
 
-
-
-## What a complete process would look like
-
-##
-
 ## Appendix: Technical-level recommendations
 
 The body of this document focuses on management shortfalls and organisational issues across departments.
 
 This appendix contains recommendations that can be addressed entirely within Data Management.
 
-### Disconnect between Qserv and Data Engineering
+```{note}
+This section is work in progress below first draft left
+```
+<!--
+#### Disconnect between Qserv and Data Engineering
 
 Felis, a Data Engineering product, controls schema and constitutes source of truth for Data Services.
 It is not, however, source of truth for Qserv.
 
 The Data Services Lead is taking an action to discuss with these teams improvements, ideally to have Felis be source of truth for Qserv, or as a temporary mitigation, cross-validate the Felis and Qserv schemas.
 
-
-There is currenty
+ -->
 
 <!-- we need to be previewing substantial bigger stuff
     bulk cutout
