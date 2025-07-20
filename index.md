@@ -179,7 +179,7 @@ The process for granting RSP accounts has the dubious merit of being simultaneou
 Ironically, the requirement for manual intervention for user creation was an asset for DP1 - 2,000 extra users you weren't expecting can't suddenly show up because it takes several days to process account creation requests.
 However, even this process cannot stop account requests in bad faith.
 
-**Recommendation:** We evaluate and a price third-party identity verification service.
+**Recommendation:** We evaluate and price a third-party identity verification service.
 
 ### Idiosyncratic issues
 
