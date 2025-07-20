@@ -168,7 +168,7 @@ Moreover, any trade-off is a two-edged sword; data at USDF means more network tr
 
 One advantage real-world DP1 usage gives us is a realistic user profile. We can use that to make decisions about whether to mitigate "pure hybrid" by having the most popular data products for the latest Data Release on GCP.
 
-**Recommendation:** No later than following DP0.2 release (but ideally earlier) prepare for a critical internal review of the pure hybrid plan.
+**Recommendation:** No later than following DP2 release (but ideally earlier) prepare for a critical internal review of the pure hybrid plan.
 
 Data Services teams will start collecting data, conduct performance tests and calculate uptime statistics to support such a review.
 
