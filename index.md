@@ -17,7 +17,7 @@ This document can be considered a management-level lessons-learned/post-mortem f
 
 Our aim is not just to achieve results, it's to achieve results with a process that is efficient in staff time to preserve as much development time as possible.
 Sustained development is central to keeping our software and services state of the art.
-Delays, miscommunication, errors, human time spent on tasks that can be machine-performed and heroism to increase number of hours available in a week are signs of a process in need of improvement.
+Delays, miscommunication, errors, human time spent on tasks that can be automated, and heroism to increase number of hours available in a week are all signs of a process in need of improvement.
 
 We regard hero-mode as the aviation equivalent of a near-miss: the bad outcome did not occur, and barely anybody pays attention to it, but it's a warning sign that should not be ignored.
 
