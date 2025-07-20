@@ -187,7 +187,7 @@ The following issues arose due to issues that there is no reason to believe will
 
 #### First Look
 
-First Look was an event that required significant effort from pipelines at just the time where pipeline developer capacity would have been available for testing, sanity checking, data product iteration, etc.
+First Look was an event that required significant effort from pipelines at just the time where pipeline developer effort would have been most useful for testing, sanity checking, data product iteration, advice to Data Engineering, etc.
 
 #### Manic Miners
 
