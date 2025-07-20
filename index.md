@@ -150,7 +150,7 @@ As an example, real-world users uncovered more issues than scale testing with 10
 Real users do wrong things, things you didn't expect, and generally don't behave like unit tests - which software teams are well aware of, but with the level of flexibility provided by the RSP, user-introduced entropy escalates much faster.
 There's a massive difference between "what if the user presses the wrong button" and "what if the user writes bad code", as there are only so many buttons but an infinite ways to  get code wrong.
 
-As a result, we have a critical need for a DP0.2-sized (minimum ~300 square degrees) data preview with real users working on LSSTCam data as an intermediate step before jumping to full DR1 size.
+As a result, we have a critical need for a DP0.2-sized (minimum ~300 square degrees) data preview with real users working with on-sky LSSTCam data as an intermediate step before jumping to full DR1 size.
 
 **Recommendation:** A substantial DP2 release is needed to give us user behavior data on a genuine DR1 precursor while we still have the protection of the "preview" label so that we can explain to the community we are still learning. It should not be ruled out that an addition "preview" release will be required before we can stand behind something with the DR1 label.
 
