@@ -21,7 +21,7 @@ Delays, miscommunication, errors, human time spent on tasks that can be automate
 
 We regard hero-mode as the aviation equivalent of a near-miss: the bad outcome did not occur, and barely anybody pays attention to it, but it's a warning sign that should not be ignored.
 
-In some cases, gaps in our process could only be mitigated due to DP1's very small volume (allowing numerous do-overs), which will not be the case for future releases.
+In some cases, gaps in our process could only be mitigated due to DP1's very small volume (a few percent of DP0.2), which allowed for numerous do-overs.  This will not be the case for any future releases.
 Complacency on the basis of DP1's apparent success is dangerous and we ignore its lessons at our peril.
 
 ## Key Project-Level Recommendations
