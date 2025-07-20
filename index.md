@@ -4,7 +4,7 @@
 Data Preview 1 was the first release of Rubin acquired, processed and published data.
 DP1 achieved its goals and was released on time and to great success; however, we have identified a number of concerns that should be resolved before bigger data releases are attempted.
 
-This document is a proposal for process and tooling improvements to cover the lifecycle from after the Pipelines processing through to Rubin Science Platform publication of the data release.
+This document is a proposal for process and tooling improvements to cover the lifecycle from the initial completion of Pipelines processing through to Rubin Science Platform publication of the data release.
 ```
 
 ## Context
