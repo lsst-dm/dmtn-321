@@ -196,7 +196,7 @@ An abuse event where accounts created in bad faith were mining cryptocurrency di
 #### Data Engineering understaffing
 
 Data Engineering has one full time developer FTE that has been diverted to address contingencies associated with the Prompt Products database.
-The Data Engineering lead is 50% FTE with another project at a time where the other project was also preparing a Data Release.
+The Data Engineering lead was at 50% FTE with another project at a time when the other project was also preparing its first Data Release.
 
 As a result, data engineering effort was under-resourced compared to its planned and necessary effort level.
 
